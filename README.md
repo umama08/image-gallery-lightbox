@@ -1,16 +1,26 @@
-# React + Vite
+﻿# Portfolio Image Gallery
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A clean, responsive image gallery with a custom lightbox viewer built entirely with **HTML5, CSS3, and Vanilla JavaScript**.
 
-Currently, two official plugins are available:
+## Features
+- **Responsive Grid:** Automatically adapts to any screen size (mobile, tablet, desktop).
+- **Lightbox Viewer:** Click any thumbnail to view the high-resolution version.
+- **Fast Loading:** Uses `loading="lazy"` on thumbnails.
+- **Navigation:** Next/Previous buttons and keyboard support.
+- **Keyboard Shortcuts:** 
+  - `Escape` - Close lightbox
+  - `Arrow Right` - Next image
+  - `Arrow Left` - Previous image
+- **No Dependencies:** Zero external libraries or frameworks (no React, no jQuery).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
+- HTML5
+- CSS3 (Grid Layout, Flexbox, Transitions)
+- Vanilla JavaScript (ES6+)
 
-## React Compiler
+## How to Run Locally
+1. Clone this repository.
+2. Open `index.html` in your web browser. That's it!
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Author
+Umama Ahmed
