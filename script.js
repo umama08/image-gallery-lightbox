@@ -19,6 +19,9 @@
     images.forEach((image, index) => {
         const item = document.createElement("div");
         item.classList.add("gallery-item");
+        item.setAttribute("tabindex", "0");
+        item.setAttribute("role", "button");
+        item.setAttribute("aria-label", `Open ${image.alt}`);
         
         const img = document.createElement("img");
         img.src = image.thumbnail;
@@ -29,6 +32,9 @@
         
         // Open lightbox on click
         item.addEventListener("click", () => openLightbox(index));
+        item.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") openLightbox(index);
+        });
         
         galleryContainer.appendChild(item);
     });
@@ -39,6 +45,7 @@
         updateLightboxImage();
         lightbox.classList.add("active");
         document.body.style.overflow = "hidden"; // Prevent scrolling when open
+        closeBtn.focus(); // move focus into the dialog
     }
 
     function closeLightbox() {
@@ -65,6 +72,12 @@
 
     // Event Listeners for Controls
     closeBtn.addEventListener("click", closeLightbox);
+    closeBtn.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            closeLightbox();
+        }
+    });
     nextBtn.addEventListener("click", (e) => { e.stopPropagation(); showNext(); });
     prevBtn.addEventListener("click", (e) => { e.stopPropagation(); showPrev(); });
     
